@@ -1,34 +1,20 @@
 package com.viewrecycles.billz
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.viewrecycles.billz.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class ActivityLogIn : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        validateLogIn()
 
     }
-    override fun onResume() {
-        super.onResume()
-        binding. tvLogin.setOnClickListener {
-            val intent = Intent(this, ActivityLogIn::class.java)
-            startActivity(intent)
-        }
-        binding. btnSignUp.setOnClickListener {
-            validateSignUp()
-        }
-
-
-
-    }
-
-    fun validateSignUp() {
+    fun validateLogIn() {
 
         val UserName =binding. etUserName.text.toString()
         val email =binding. etEmail.text.toString()
